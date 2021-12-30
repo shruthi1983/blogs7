@@ -1,0 +1,12 @@
+
+<div class =  "container">
+<ol>
+<% @articles.each do |article|%>
+<li><%= link_to article.title,article %></li>
+<%= link_to "edit", edit_article_path(article) %>
+<%= link_to "delete", article_path(article), data: { turbo_method: :delete,turbo_confirm: "are you sure?"}%>
+<% end %>
+</ol>
+<ul>
+   <li> <%= link_to "new" , new_article_path(@article) %></li>
+</div>

@@ -1,0 +1,14 @@
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+<%= link_to "show", articles_path(@article)%>
+<%= link_to "back", articles_path(@article)%>
+
+  <h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<% @article.comments.each do |comment| %>
+   <%= link_to @article.comment,article_comment%>
+<%end%>
